@@ -1,0 +1,188 @@
+/* ============================================================
+   Global Styles — Employee Management System
+   ============================================================ */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  font-size: 14px;
+  background-color: #f4f6f9;
+  color: #333;
+}
+
+/* ── Scrollbar ─────────────────────────────────────────────── */
+::-webkit-scrollbar          { width: 6px; height: 6px; }
+::-webkit-scrollbar-track    { background: #f1f1f1; }
+::-webkit-scrollbar-thumb    { background: #c1c1c1; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #999; }
+
+/* ── Angular Material Overrides ─────────────────────────────── */
+.mat-mdc-form-field { width: 100%; }
+
+.mat-mdc-card {
+  border-radius: 12px !important;
+  box-shadow: 0 2px 8px rgba(0,0,0,.08) !important;
+}
+
+/* ── Utility classes ─────────────────────────────────────────── */
+.w-100      { width: 100% !important; }
+.text-center{ text-align: center; }
+.text-right { text-align: right; }
+.mt-1       { margin-top:  8px; }
+.mt-2       { margin-top: 16px; }
+.mb-1       { margin-bottom:  8px; }
+.mb-2       { margin-bottom: 16px; }
+.me-1       { margin-right: 8px; }
+.gap-1      { gap: 8px; }
+.gap-2      { gap: 16px; }
+.flex       { display: flex; }
+.flex-col   { flex-direction: column; }
+.items-center { align-items: center; }
+.justify-between { justify-content: space-between; }
+.justify-end     { justify-content: flex-end; }
+.flex-wrap  { flex-wrap: wrap; }
+.flex-1     { flex: 1; }
+
+/* ── Status badges ───────────────────────────────────────────── */
+.badge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: .3px;
+}
+.badge-active   { background: #e8f5e9; color: #2e7d32; }
+.badge-inactive { background: #fce4ec; color: #c62828; }
+
+/* ── Page header ─────────────────────────────────────────────── */
+.page-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.page-header h1 {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 700;
+  color: #1a237e;
+}
+.page-header .subtitle {
+  font-size: 13px;
+  color: #888;
+  margin-top: 2px;
+}
+
+/* ── Stat cards ──────────────────────────────────────────────── */
+.stat-card {
+  border-radius: 14px !important;
+  overflow: hidden;
+  position: relative;
+}
+.stat-card .mat-mdc-card-content {
+  padding: 20px 24px !important;
+}
+
+/* ── Data table ──────────────────────────────────────────────── */
+.data-table-container {
+  overflow-x: auto;
+  border-radius: 12px;
+}
+.mat-mdc-table {
+  width: 100%;
+  min-width: 700px;
+}
+.mat-mdc-header-cell {
+  font-weight: 700 !important;
+  font-size: 12px !important;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  color: #666 !important;
+  background: #fafafa;
+}
+.mat-mdc-row:hover { background: #f5f7ff !important; }
+
+/* ── Forms ───────────────────────────────────────────────────── */
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 0 20px;
+}
+
+/* ── Toolbar actions ─────────────────────────────────────────── */
+.toolbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+/* ── Empty state ─────────────────────────────────────────────── */
+.empty-state {
+  text-align: center;
+  padding: 60px 24px;
+  color: #aaa;
+}
+.empty-state mat-icon { font-size: 64px; width: 64px; height: 64px; opacity: .4; }
+.empty-state p { margin-top: 16px; font-size: 15px; }
+
+/* ── Loading overlay ─────────────────────────────────────────── */
+.loading-shade {
+  position: absolute;
+  inset: 0;
+  background: rgba(255,255,255,.6);
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ── Sidebar layout ──────────────────────────────────────────── */
+.app-container {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.content-area {
+  flex: 1;
+  overflow-y: auto;
+  padding: 24px;
+}
+
+/* ── Responsive ──────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .content-area { padding: 16px; }
+  .page-header  { flex-direction: column; align-items: flex-start; }
+  .toolbar-actions { width: 100%; }
+}
+
+/* ── Toast / Snackbar styles ─────────────────────────────────── */
+.snack-success .mdc-snackbar__surface { background: #2e7d32 !important; }
+.snack-error   .mdc-snackbar__surface { background: #c62828 !important; }
+.snack-warn    .mdc-snackbar__surface { background: #f57c00 !important; }
+.snack-info    .mdc-snackbar__surface { background: #1565c0 !important; }
+
+.mdc-snackbar__label { color: #fff !important; font-weight: 500 !important; }
+.mdc-snackbar__action .mdc-button__label { color: rgba(255,255,255,.8) !important; }
+
+/* ── Material card header fix ────────────────────────────────── */
+.mat-mdc-card-header .mat-mdc-card-title {
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+}
+.mat-mdc-card-header {
+  padding-bottom: 12px !important;
+}
