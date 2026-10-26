@@ -1,8 +1,7 @@
-CREATE DATABASE IF NOT EXISTS employee_management_db
-  CHARACTER SET utf8mb4
-  COLLATE utf8mb4_unicode_ci;
-
-USE employee_management_db;
+INSERT IGNORE INTO users (username, email, password, role) VALUES
+INSERT IGNORE INTO departments (name, description) VALUES
+INSERT IGNORE INTO roles (title, description, department_id) VALUES
+INSERT IGNORE INTO employees (employee_id, first_name, ...
 
 CREATE TABLE IF NOT EXISTS users (
   id         INT          NOT NULL AUTO_INCREMENT,
