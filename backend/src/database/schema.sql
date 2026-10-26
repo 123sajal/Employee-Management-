@@ -1,8 +1,3 @@
-INSERT IGNORE INTO users (username, email, password, role) VALUES
-INSERT IGNORE INTO departments (name, description) VALUES
-INSERT IGNORE INTO roles (title, description, department_id) VALUES
-INSERT IGNORE INTO employees (employee_id, first_name, ...
-
 CREATE TABLE IF NOT EXISTS users (
   id         INT          NOT NULL AUTO_INCREMENT,
   username   VARCHAR(50)  NOT NULL UNIQUE,
@@ -68,11 +63,11 @@ CREATE TABLE IF NOT EXISTS employees (
   INDEX idx_emp_role   (role_id)
 ) ENGINE=InnoDB;
 
-INSERT INTO users (username, email, password, role) VALUES
+INSERT IGNORE INTO users (username, email, password, role) VALUES
 ('admin',   'admin@ems.com',   '$2a$12$LQv3c1yqBWVHxkd0LHAkCOYz6TtxMQJqhN8/LewdBPj/lSOwX5M6y', 'admin'),
 ('manager', 'manager@ems.com', '$2a$12$LQv3c1yqBWVHxkd0LHAkCOYz6TtxMQJqhN8/LewdBPj/lSOwX5M6y', 'manager');
 
-INSERT INTO departments (name, description) VALUES
+INSERT IGNORE INTO departments (name, description) VALUES
 ('Engineering',      'Software development and infrastructure'),
 ('Human Resources',  'Employee management and recruitment'),
 ('Finance',          'Accounting, payroll and financial planning'),
@@ -82,7 +77,7 @@ INSERT INTO departments (name, description) VALUES
 ('Design',           'UI/UX and graphic design'),
 ('Customer Support', 'Client support and success');
 
-INSERT INTO roles (title, description, department_id) VALUES
+INSERT IGNORE INTO roles (title, description, department_id) VALUES
 ('Software Engineer',        'Develops and maintains software applications',   1),
 ('Senior Software Engineer', 'Leads software design and architecture',         1),
 ('DevOps Engineer',          'Manages CI/CD pipelines and infrastructure',     1),
@@ -98,7 +93,7 @@ INSERT INTO roles (title, description, department_id) VALUES
 ('UI/UX Designer',           'Designs user interfaces and experiences',        7),
 ('Support Engineer',         'Provides technical support to clients',          8);
 
-INSERT INTO employees (employee_id, first_name, last_name, email, phone, department_id, role_id, salary, date_of_joining, address, status) VALUES
+INSERT IGNORE INTO employees (employee_id, first_name, last_name, email, phone, department_id, role_id, salary, date_of_joining, address, status) VALUES
 ('EMP001', 'Alice',  'Johnson', 'alice.johnson@ems.com',  '555-0101', 1, 2,  105000.00, '2021-03-15', '123 Maple St, New York, NY 10001',         'active'),
 ('EMP002', 'Bob',    'Smith',   'bob.smith@ems.com',      '555-0102', 1, 1,   85000.00, '2022-01-10', '456 Oak Ave, Los Angeles, CA 90001',       'active'),
 ('EMP003', 'Carol',  'White',   'carol.white@ems.com',    '555-0103', 2, 4,   90000.00, '2020-07-20', '789 Pine Rd, Chicago, IL 60601',           'active'),
