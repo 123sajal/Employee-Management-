@@ -64,8 +64,9 @@ CREATE TABLE IF NOT EXISTS employees (
 ) ENGINE=InnoDB;
 
 INSERT IGNORE INTO users (username, email, password, role) VALUES
-('admin',   'admin@ems.com',   '$2a$12$LQv3c1yqBWVHxkd0LHAkCOYz6TtxMQJqhN8/LewdBPj/lSOwX5M6y', 'admin'),
-('manager', 'manager@ems.com', '$2a$12$LQv3c1yqBWVHxkd0LHAkCOYz6TtxMQJqhN8/LewdBPj/lSOwX5M6y', 'manager');
+('admin',   'admin@ems.com',   '$2a$12$b.dluecjNc/Y1yCj/rHCFOPH9x7vQUTPw4rVel8yHUKuUuzJOEGbq', 'admin'),
+('manager', 'manager@ems.com', '$2a$12$b.dluecjNc/Y1yCj/rHCFOPH9x7vQUTPw4rVel8yHUKuUuzJOEGbq', 'manager');
+
 
 INSERT IGNORE INTO departments (name, description) VALUES
 ('Engineering',      'Software development and infrastructure'),
